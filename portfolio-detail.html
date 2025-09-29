@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Detail - Fakhri Akmal Hidayat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#1f2937',
+                        'secondary': '#374151',
+                        'accent': '#3b82f6',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .code-block {
+            background: #1a202c;
+            color: #e2e8f0;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+
+    <!-- Main Content -->
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Project Header -->
+        <div id="project-header" class="bg-white rounded-xl p-8 shadow-sm mb-8">
+            <!-- Content will be loaded by JavaScript -->
+        </div>
+
+        <!-- Project Content -->
+        <div id="project-content">
+            <!-- Content will be loaded by JavaScript -->
+        </div>
+
+        <!-- Back to Portfolio -->
+        <div class="mt-12 text-center">
+            <a href="index.html" class="inline-block bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all">
+                ← Back to All Projects
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Project data
+        const projects = {
+            'cdc-pipeline': {
+                title: 'Building a Real-Time MySQL to ClickHouse CDC Pipeline with Debezium and Kafka',
+                icon: 'CDC',
+                iconColor: 'from-blue-500 to-purple-600',
+                status: 'Completed',
+                statusColor: 'bg-green-100 text-green-800',
+                tags: ['MySQL', 'ClickHouse', 'Debezium', 'Kafka', 'Docker', 'CDC'],
+                content: {
+                    article: `In today's data-driven landscape, organizations need real-time analytics capabilities to make informed decisions quickly. This project demonstrates how to build a robust Change Data Capture (CDC) pipeline that seamlessly streams data changes from MySQL to ClickHouse using Debezium, Kafka, and Docker. The architecture enables real-time data synchronization between transactional (OLTP) and analytical (OLAP) systems, allowing businesses to perform analytics on fresh data without impacting production database performance.
+
+The pipeline leverages Debezium's MySQL connector to monitor binary logs (binlog) and capture INSERT, UPDATE, and DELETE operations in real-time. These change events are then published to Apache Kafka topics, creating a reliable and scalable streaming platform. Kafka acts as a buffer and distribution mechanism, ensuring data durability and enabling multiple downstream consumers to process the same change streams independently. This decoupled architecture provides fault tolerance and allows for easy scaling as data volumes grow.
+
+The implementation uses Docker Compose to orchestrate all components, making deployment and management straightforward. Debezium connectors are configured through RESTful APIs, while Python scripts automate the setup of multiple CDC and sink configurations. The ClickHouse sink connector consumes events from Kafka and efficiently loads them into ClickHouse tables, optimized for analytical workloads. This setup ensures that analytical queries can be performed on near real-time data without affecting the source MySQL database performance.
+
+The project provides a complete solution with sample data, configuration templates, and monitoring capabilities through Kafdrop for Kafka topic visualization. This CDC pipeline architecture is particularly valuable for organizations implementing modern data architectures, enabling real-time analytics, data warehousing, and event-driven applications. The containerized approach ensures consistency across different environments and simplifies the deployment process for both development and production scenarios.`,
+                    github: 'https://github.com/fakhriakmalh/cdc-mysql-clickhouse'
+                }
+            },
+            'etl-airflow': {
+                title: 'Scheduled Pipeline using Airflow',
+                icon: 'ML',
+                iconColor: 'from-green-500 to-teal-600',
+                status: 'Completed',
+                statusColor: 'bg-green-100 text-green-800',
+                tags: ['Docker', 'Airflow', 'Python', 'ETL', 'OLAP'],
+                content: {
+                    article: `In the modern data-driven landscape, organizations require efficient and reliable data processing pipelines to transform raw transactional data into actionable insights. This project demonstrates the implementation of a comprehensive ETL (Extract, Transform, Load) pipeline that seamlessly integrates MySQL as a source database, Apache Airflow as an orchestration engine, and ClickHouse as a high-performance analytical database. The pipeline is specifically designed to process daily sales data and generate critical business metrics including total orders, revenue, profit margins, and average order values.
+
+The architecture leverages Docker containerization to ensure consistent deployment across different environments, with all components—MySQL, Airflow, and ClickHouse—running in isolated containers that communicate through a well-defined network. The core workflow begins with data extraction from MySQL's transactional tables (orders and order_items), followed by transformation logic that joins related tables, filters for completed orders, and calculates daily aggregations. To optimize performance and ensure data integrity, the pipeline utilizes Apache Parquet format for temporary data storage, enabling efficient columnar data processing and reducing I/O overhead during the transformation phase.
+
+The orchestration component, built using Apache Airflow, implements a robust DAG (Directed Acyclic Graph) that executes every six hours using a cron-based scheduler. This frequent execution ensures near real-time availability of sales metrics while maintaining system stability. The pipeline incorporates comprehensive error handling, automatic retries, and detailed logging to guarantee reliability in production environments. Each task in the workflow is designed with idempotency in mind, allowing safe re-execution without data duplication or corruption.
+
+Data validation forms a critical aspect of this implementation, with built-in verification mechanisms that cross-check calculated metrics against expected values. For instance, the system validates that total revenue equals the sum of individual item prices, and profit calculations correctly reflect the difference between revenue and cost. The final output is stored in ClickHouse's daily_sales_stats table, which provides high-performance querying capabilities for business intelligence tools and analytical dashboards. This end-to-end solution demonstrates best practices in modern data engineering, including containerization, workflow orchestration, data quality assurance, and scalable architecture design that can accommodate growing data volumes and evolving business requirements.`,
+                    github: 'https://github.com/fakhriakmalh/airflow-clickhouse-pipeline'
+                }
+            },
+            'data-quality': {
+                title: 'Enterprise Data Quality Framework with Automated Testing and Monitoring',
+                icon: 'DQ',
+                iconColor: 'from-orange-500 to-red-600',
+                status: 'In Progress',
+                statusColor: 'bg-blue-100 text-blue-800',
+                tags: ['Open Metadata', 'dbt', 'Data Quality'],
+                content: {
+                    article: `Data quality is the bedrock of reliable decision-making. Without it, even the most sophisticated analytics models become unreliable, leading to flawed business strategies and distrust among data consumers. In modern, complex data platforms, achieving high quality requires a systematic approach that is integrated into the data transformation pipeline. Tools like dbt (data build tool) and OpenMetadata have emerged as essential components, shifting data quality checks from a reactive, end-of-pipeline process to a proactive, continuous practice.
+
+dbt fundamentally addresses data quality by integrating testing directly into the transformation layer. Developers can define reusable data quality tests (e.g., uniqueness, non-null status, foreign key relationships) as simple YAML configurations alongside their SQL models. This "test-as-code" approach ensures that models are automatically validated every time they are built or deployed, failing the build if a critical quality threshold is breached. Furthermore, dbt's snapshotting feature helps track changes and maintain historicity, preventing data quality issues related to unexpected updates or deletions. This focus on developer-centric quality assurance dramatically reduces the chance of bad data propagating to downstream consumers.
+
+While dbt handles testing during the pipeline, OpenMetadata serves as the central hub for governance and observability, unifying metadata from dbt and over 90 other data services. Its core features extend far beyond basic quality monitoring: it provides a Data Quality and Profiling module that allows users to write and deploy no-code tests directly from the UI (table-level or column-level). Crucially, OpenMetadata offers comprehensive Data Lineage (tracing data flow from source to dashboard), an extensive Data Discovery engine for easy search, and features for Governance like PII tagging, ownership assignment, and a business glossary. By consolidating dbt's test results, lineage, and governance info into one Unified Metadata Graph, it empowers users to see the entire data context—from technical definitions to trust scores.
+
+In conclusion, the synergy between dbt and OpenMetadata creates a robust, end-to-end data quality framework. dbt acts as the quality enforcer during transformation, using code to embed rigorous tests. OpenMetadata acts as the quality auditor and governor, providing the essential context, lineage, and monitoring dashboards needed to build data trust. Together, they transform data quality from a tedious cleanup task into an automated, transparent, and foundational element of the modern data stack, ensuring that business decisions are always powered by reliable data.`,
+                    github: 'https://github.com/fakhriakmalh/enterprise-data-quality'
+                }
+            },
+            'realtime-pipeline': {
+                title: 'Real Time Transformation Pipeline with Flink and Kafka',
+                icon: 'FL',
+                iconColor: 'from-indigo-500 to-blue-600',
+                status: 'Completed',
+                statusColor: 'bg-green-100 text-green-800',
+                tags: ['Flink', 'Kubernetes', 'Kafka', 'Real Time', 'Distributed Systems'],
+                content: {
+                    article: `In today's data-driven landscape, organizations require real-time insights from their operational databases to make informed decisions quickly. This project demonstrates the implementation of a robust streaming data pipeline that captures database changes from MySQL using Change Data Capture (CDC) technology and processes them through Apache Flink before storing the results in ClickHouse for analytical queries. The architecture eliminates the traditional batch processing delays, enabling near real-time analytics and reporting capabilities that are essential for modern business operations.
+
+                    The implementation takes a unique approach by leveraging Flink CDC instead of the more commonly used Debezium connector, prioritizing simplicity and resource efficiency. This decision eliminates the need for additional Kafka Connect infrastructure while maintaining similar CDC functionality. The pipeline utilizes Apache Flink's powerful stream processing capabilities combined with its Table API, allowing for SQL-based transformations on streaming data. This approach provides developers with familiar SQL syntax while benefiting from Flink's distributed processing capabilities, making the solution both accessible and scalable.
+
+                    A critical aspect of this project involves building a custom PyFlink environment through Docker containerization. The setup requires manual download of various JAR dependencies including ClickHouse drivers, Flink connectors, and MySQL connectors due to their large file sizes. The containerized approach ensures consistent deployment across different environments while the Flink cluster configuration with separate JobManager and TaskManager containers provides the necessary scalability and fault tolerance for production workloads. The pipeline processes data transformations in real-time, calculating daily sales statistics and other business metrics as changes occur in the source MySQL database.
+
+                    The end result is a production-ready streaming analytics platform that bridges operational and analytical data stores. By capturing MySQL changes through CDC and processing them with Flink's stream processing engine before loading into ClickHouse's columnar database, the pipeline enables sub-second query performance on fresh data. This architecture pattern is particularly valuable for applications requiring real-time dashboards, fraud detection, inventory management, and other time-sensitive analytics use cases where traditional ETL batch processing would introduce unacceptable delays in data availability`,
+                    github: 'https://github.com/fakhriakmalh/flink-clickhouse-pipeline'
+                }
+            }
+        };
+
+        // Get project from URL parameter
+        function getProjectFromURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('project') || 'realtime-pipeline';
+        }
+
+        // Load project content
+        function loadProject() {
+            const projectKey = getProjectFromURL();
+            const project = projects[projectKey];
+
+            if (!project) {
+                document.getElementById('project-header').innerHTML = `
+                    <div class="text-center">
+                        <h1 class="text-2xl font-bold text-red-600 mb-4">Project Not Found</h1>
+                        <p class="text-gray-600">The requested project could not be found.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            // Load header with project overview
+            document.getElementById('project-header').innerHTML = `
+                <div class="mb-8">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-br ${project.iconColor} rounded-lg flex items-center justify-center text-white font-bold text-lg">
+                            ${project.icon}
+                        </div>
+                        <span class="text-sm ${project.statusColor} px-3 py-1 rounded-full">${project.status}</span>
+                    </div>
+                    <h1 class="text-3xl md:text-4xl font-bold gradient-text mb-4">${project.title}</h1>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        ${project.tags.map(tag => `
+                            <span class="text-xs bg-gray-100 text-gray-800 px-3 py-1 rounded-full">${tag}</span>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+
+            // Load article content
+            document.getElementById('project-content').innerHTML = `
+                <article class="bg-white rounded-xl p-8 shadow-sm card-hover">
+                    <div class="prose max-w-none">
+                        ${project.content.article.split('\n\n').map(paragraph => `
+                            <p class="text-gray-700 leading-relaxed mb-6">${paragraph.trim()}</p>
+                        `).join('')}
+                    </div>
+                    
+                    <!-- GitHub Link -->
+                    <div class="mt-12 pt-8 border-t border-gray-200">
+                        <div class="text-center">
+                            <p class="text-gray-600 mb-4">Want to explore the complete implementation?</p>
+                            <a href="${project.content.github}" target="_blank" 
+                               class="inline-flex items-center gap-2 bg-gray-800 text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition-all font-medium">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                                </svg>
+                                Check details on GitHub
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            `;
+        }
+
+        // Load project on page load
+        document.addEventListener('DOMContentLoaded', loadProject);
+    </script>
+</body>
+</html>

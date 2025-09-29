@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fakhri Akmal Hidayat - Data Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#1f2937',
+                        'secondary': '#374151',
+                        'accent': '#3b82f6',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .tab-button {
+            transition: all 0.3s ease;
+        }
+        .tab-button.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Header Section -->
+    <div class="bg-white shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 py-12">
+            <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
+                <!-- Profile Image -->
+                <!-- <div class="flex-shrink-0">
+                    <div class="w-32 h-32 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full flex items-center justify-center text-4xl font-bold text-white shadow-lg">
+                        FA
+                    </div>
+                </div> -->
+
+                <!-- Profile Image -->
+            <div class="flex-shrink-0">
+                <div class="w-32 h-32 rounded-full overflow-hidden shadow-lg border-4 border-white">
+                    <img src="./images/foto.jpg" alt="Fakhri Akmal Hidayat" class="w-full h-full object-cover">
+                </div>
+            </div>
+                
+                <!-- Profile Info -->
+                <div class="flex-1 text-center md:text-left">
+                    <h1 class="text-4xl md:text-5xl font-bold gradient-text mb-5">
+                        Fakhri Akmal H.
+                    </h1>
+                    <h2 class="text-xl md:text-2xl text-gray-600 mb-4 mt-3 font-medium">
+                        Data Engineer | Data & AI Enthusiast
+                    </h2>
+                    <p class="text-gray-700 leading-relaxed max-w-2xl">
+                        Experienced Data Engineer with approximately 4 years of experience with expertise in Python and SQL, 
+                        complemented by a good understanding of Linux, Docker, Kubernetes, Scala and Node JS.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="bg-white border-b">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-wrap gap-2 py-4">
+                <button class="tab-button active px-6 py-3 rounded-lg font-medium transition-all" onclick="showTab('tech')">
+                    🛠️ Tech Stack
+                </button>
+                <button class="tab-button px-6 py-3 rounded-lg font-medium bg-gray-100 hover:bg-gray-200" onclick="showTab('experience')">
+                    💼 Experience
+                </button>
+                <button class="tab-button px-6 py-3 rounded-lg font-medium bg-gray-100 hover:bg-gray-200" onclick="showTab('academic')">
+                    🎓 Academic
+                </button>
+                <button class="tab-button px-6 py-3 rounded-lg font-medium bg-gray-100 hover:bg-gray-200" onclick="showTab('publications')">
+                    📝 Publications
+                </button>
+                <button class="tab-button px-6 py-3 rounded-lg font-medium bg-gray-100 hover:bg-gray-200" onclick="showTab('portfolio')">
+                    📁 Portfolio
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-6xl mx-auto px-4 py-8">
+        
+        <!-- Tech Stack Tab -->
+        <div id="tech" class="tab-content active">
+            <div class="grid gap-8">
+                <!-- Languages & Frameworks -->
+                <div class="bg-white rounded-xl p-6 shadow-sm card-hover">
+                    <h3 class="text-xl font-semibold mb-6 text-gray-800">Languages, Packages & Frameworks</h3>
+                    <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                        <div class="tech-item flex flex-col items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" class="w-12 h-12 mb-2">
+                            <span class="text-sm font-medium">Python</span>
+                        </div>
+                        <div class="tech-item flex flex-col items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                            <img src="https://www.svgrepo.com/show/330413/fastapi.svg" alt="FastAPI" class="w-12 h-12 mb-2">
+                            <span class="text-sm font-medium">FastAPI</span>
+                        </div>
+                        <div class="tech-item flex flex-col items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                            <img src="https://streamlit.io/images/brand/streamlit-mark-color.png" alt="Streamlit" class="w-12 h-12 mb-2">
+                            <span class="text-sm font-medium">Streamlit</span>
+                        </div>
+                        <div class="tech-item flex flex-col items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript" class="w-12 h-12 mb-2">
+                            <span class="text-sm font-medium">JavaScript</span>
+                        </div>
+                        <div class="tech-item flex flex-col items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/NestJS.svg" alt="NestJS" class="w-12 h-12 mb-2">
+                            <span class="text-sm font-medium">NestJS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Infrastructure Tools -->
+                <div class="bg-white rounded-xl p-6 shadow-sm card-hover">
+                    <h3 class="text-xl font-semibold mb-6 text-gray-800">Infrastructure Tools</h3>
+                    <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                        <div class="tech-item flex flex-col items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg" alt="Linux" class="w-12 h-12 mb-2">
+                            <span class="text-sm font-medium">Linux</span>
+                        </div>
+                        <div class="tech-item flex flex-col items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" class="w-12 h-12 mb-2">
+                            <span class="text-sm font-medium">GitHub</span>
+                        </div>
+                        <div class="tech-item flex flex-col items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                            <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" alt="Git" class="w-12 h-12 mb-2">
+                            <span class="text-sm font-medium">Git</span>
+                        </div>
+                        <div class="tech-item flex flex-col items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                            <img src="https://about.gitlab.com/images/press/logo/png/gitlab-icon-rgb.png" alt="GitLab" class="w-12 h-12 mb-2">
+                            <span class="text-sm font-medium">GitLab</span>
+                        </div>
+                        <div class="tech-item flex flex-col items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                            <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/97_Docker_logo_logos-1024.png" alt="Docker" class="w-12 h-12 mb-2">
+                            <span class="text-sm font-medium">Docker</span>
+                        </div>
+                        <div class="tech-item flex flex-col items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Kubernetes_logo_without_workmark.svg" alt="Kubernetes" class="w-12 h-12 mb-2">
+                            <span class="text-sm font-medium">Kubernetes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Engineering Tools -->
+                <div class="bg-white rounded-xl p-6 shadow-sm card-hover">
+                    <h3 class="text-xl font-semibold mb-6 text-gray-800">Data Engineering Tools</h3>
+                    <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                        <div class="tech-item flex flex-col items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                            <img src="https://seeklogo.com/images/D/dbt-logo-500AB0BAA7-seeklogo.com.png" alt="dbt" class="w-12 h-12 mb-2">
+                            <span class="text-sm font-medium">dbt</span>
+                        </div>
+                        <div class="tech-item flex flex-col items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                            <img src="https://icon.icepanel.io/Technology/svg/Apache-Airflow.svg" alt="Airflow" class="w-12 h-12 mb-2">
+                            <span class="text-sm font-medium">Airflow</span>
+                        </div>
+                        <div class="tech-item flex flex-col items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                            <img src="https://flink.apache.org/img/logo/png/200/flink_squirrel_200_color.png" alt="Flink" class="w-12 h-12 mb-2">
+                            <span class="text-sm font-medium">Flink</span>
+                        </div>
+                        <div class="tech-item flex flex-col items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Apache_Spark_logo.svg" alt="Spark" class="w-16 h-12 mb-2">
+                            <span class="text-sm font-medium">Spark</span>
+                        </div>
+                        <div class="tech-item flex flex-col items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                            <!-- <div class="w-12 h-12 mb-2 bg-blue-500 rounded flex items-center justify-center text-white font-bold">RW</div> -->
+                            <img src="https://cdn-1.webcatalog.io/catalog/risingwave/risingwave-icon-filled-256.webp?v=1730597329767" alt="RisingWave" class="w-12 h-12 mb-2">
+                            <span class="text-sm font-medium">RisingWave</span>
+                        </div>
+                        <!-- https://open-metadata.org/assets/favicon.png -->
+                        <div class="tech-item flex flex-col items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                            <!-- <div class="w-12 h-12 mb-2 bg-blue-500 rounded flex items-center justify-center text-white font-bold">RW</div> -->
+                            <img src="https://open-metadata.org/assets/favicon.png" alt="open-metadata" class="w-12 h-12 mb-2">
+                            <span class="text-sm font-medium">open-metadata</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DB & Analytics Tools -->
+                <div class="bg-white rounded-xl p-6 shadow-sm card-hover">
+                    <h3 class="text-xl font-semibold mb-6 text-gray-800">Database & Analytics Tools</h3>
+                    <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                        <div class="tech-item flex flex-col items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                            <img src="https://dbeaver.io/wp-content/uploads/2015/09/beaver-head.png" alt="DBeaver" class="w-12 h-12 mb-2">
+                            <span class="text-sm font-medium">DBeaver</span>
+                        </div>
+                        <div class="tech-item flex flex-col items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg" alt="PostgreSQL" class="w-12 h-12 mb-2">
+                            <span class="text-sm font-medium">PostgreSQL</span>
+                        </div>
+                        <div class="tech-item flex flex-col items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                            <img src="https://upload.wikimedia.org/wikipedia/labs/8/8e/Mysql_logo.png" alt="MySQL" class="w-12 h-8 mb-2">
+                            <span class="text-sm font-medium">MySQL</span>
+                        </div>
+                        <div class="tech-item flex flex-col items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                            <img src="https://www.cdnlogo.com/logos/c/57/clickhouse.svg" alt="ClickHouse" class="w-12 h-12 mb-2">
+                            <span class="text-sm font-medium">ClickHouse</span>
+                        </div>
+                        <div class="tech-item flex flex-col items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                            <img src="https://cdn.worldvectorlogo.com/logos/google-bigquery-logo-1.svg" alt="BigQuery" class="w-12 h-12 mb-2">
+                            <span class="text-sm font-medium">BigQuery</span>
+                        </div>
+                        <div class="tech-item flex flex-col items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Amazon-Redshift-Logo.svg" alt="Redshift" class="w-16 h-12 mb-2">
+                            <span class="text-sm font-medium">Redshift</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Experience Tab -->
+        <div id="experience" class="tab-content">
+            <h2 class="text-2xl font-bold mb-8 text-gray-800">Work Experience</h2>
+            <div class="space-y-6">
+                <!-- Badr Interactive -->
+                <div class="bg-white rounded-xl p-6 shadow-sm card-hover">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <h3 class="text-xl font-semibold text-gray-800">Data Engineer</h3>
+                        <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">Jan 2025 - Present</span>
+                    </div>
+                    <p class="text-lg text-gray-600 mb-4">Badr Interactive</p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            Build streaming pipeline using kafka, debezium (CDC), and Risingwave
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            Maintain data model using dbt and Risingwave at streaming pipeline
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            Initiate to create data contract to define data model at datamart layer
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            Optimize query at the dashboard on top of Clickhouse
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Sirclo -->
+                <div class="bg-white rounded-xl p-6 shadow-sm card-hover">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <h3 class="text-xl font-semibold text-gray-800">Data Engineer</h3>
+                        <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">Mar 2022 - Dec 2024</span>
+                    </div>
+                    <p class="text-lg text-gray-600 mb-4">Sirclo</p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            Develop and maintain data pipeline framework on Apache Airflow
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            Deploy ML/AI model on production and maintain to trigger it with Pod Operator Airflow
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            Develop advanced web scraping tools on top of Kubernetes to track top-selling products at e-commerce platform
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            Design and maintain internal tools on top of Kubernetes to enhance productivity within the data engineering workflow
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            Leverage dbt services to guarantee robust and maintainable data transformations within BigQuery
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            Partner with the data analyst team to generate actionable insights for business users
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Metrodata -->
+                <div class="bg-white rounded-xl p-6 shadow-sm card-hover">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <h3 class="text-xl font-semibold text-gray-800">Big Data Consultant Analyst</h3>
+                        <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">Nov 2020 - March 2022</span>
+                    </div>
+                    <p class="text-lg text-gray-600 mb-4">Metrodata</p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            Installing environment for teammates based on Cloudera Environment (CDP), which include some services like HDFS, Hive, Kudu, Spark, YARN, Zookeeper, Impala
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            Big Data Support for Cloudera Environment at client
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            Assisting problem that might occur, collecting log for issued job and creating ticket to support Cloudera
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Academic Tab -->
+        <div id="academic" class="tab-content">
+            <h2 class="text-2xl font-bold mb-8 text-gray-800">Academic Background</h2>
+            <div class="space-y-6">
+                <!-- Master's Degree -->
+                <div class="bg-white rounded-xl p-6 shadow-sm card-hover">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <h3 class="text-xl font-semibold text-gray-800">Master Degree of Computer Science</h3>
+                        <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">2025</span>
+                    </div>
+                    <p class="text-lg text-gray-600 mb-4">Universitas Indonesia, Depok</p>
+                    <p class="text-gray-700 mb-3">Thesis about optimization of scheduler in serverless platform to reduce cold start.</p>
+                    <a href="https://github.com/fakhriakmalh/adaptive-scheduler-faas" target="_blank" 
+                       class="inline-block bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all">
+                        See Thesis
+                    </a>
+                </div>
+
+                <!-- Bachelor's Degree -->
+                <div class="bg-white rounded-xl p-6 shadow-sm card-hover">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <h3 class="text-xl font-semibold text-gray-800">Bachelor Degree of Engineering</h3>
+                        <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">2019</span>
+                    </div>
+                    <p class="text-lg text-gray-600 mb-4">Universitas Gadjah Mada, Yogyakarta</p>
+                    <p class="text-gray-700 mb-3">Thesis about ANN & Fuzzy logic based thermal controller.</p>
+                    <a href="https://etd.repository.ugm.ac.id/penelitian/detail/178200" target="_blank" 
+                       class="inline-block bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all">
+                        See Thesis
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Publications Tab -->
+        <div id="publications" class="tab-content">
+            <h2 class="text-2xl font-bold mb-8 text-gray-800">Publications</h2>
+            <div class="bg-white rounded-xl p-6 shadow-sm card-hover">
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">
+                    Adaptive Scheduling for Serverless Platforms: Leveraging SRTF and Dynamic Aging
+                </h3>
+                <p class="text-gray-600 bg-yellow-50 border border-yellow-200 rounded-lg px-3 py-2 inline-block">
+                    Under Review on ACM Transactions on Computer Systems
+                </p>
+            </div>
+        </div>
+
+        <!-- Portfolio Tab -->
+        <div id="portfolio" class="tab-content">
+            <h2 class="text-2xl font-bold mb-8 text-gray-800">Portfolio</h2>
+            <div class="grid gap-6 md:grid-cols-2">
+                <!-- Project 1: CDC Data Pipeline -->
+                <div class="bg-white rounded-xl p-6 shadow-sm card-hover">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center text-white font-bold text-lg">
+                            CD
+                        </div>
+                        <!-- <span class="text-xs text-gray-500 bg-green-100 px-2 py-1 rounded-full">Completed</span> -->
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">CDC from OLTP to OLAP</h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Built a comprehensive change data capture using Kafka and Debezium to transfer data from MySQL into ClickHouse for real-time needs.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">Kafka</span>
+                        <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded-full">Debezium</span>
+                        <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">ClickHouse</span>
+                    </div>
+                    <a href="portfolio-detail.html?project=cdc-pipeline" 
+                       class="inline-block bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all text-sm">
+                        View Details →
+                    </a>
+                </div>
+
+                <!-- Project 2: Batch ETL with Airflow -->
+                <div class="bg-white rounded-xl p-6 shadow-sm card-hover">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center text-white font-bold text-lg">
+                            AR
+                        </div>
+                        <!-- <span class="text-xs text-gray-500 bg-green-100 px-2 py-1 rounded-full">Completed</span> -->
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Scheduled Pipeline using Airflow</h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Implemented scheduled batch data processing pipelines using Apache Airflow to automate data ETL operations on a regular cadence.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">Docker</span>
+                        <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded-full">Airflow</span>
+                        <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded-full">Python</span>
+                    </div>
+                    <a href="portfolio-detail.html?project=etl-airflow" 
+                       class="inline-block bg-gradient-to-r from-green-500 to-teal-600 text-white px-4 py-2 rounded-lg hover:from-green-600 hover:to-teal-700 transition-all text-sm">
+                        View Details →
+                    </a>
+                </div>
+
+                <!-- Project 3: Data Quality Framework -->
+                <div class="bg-white rounded-xl p-6 shadow-sm card-hover">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-lg flex items-center justify-center text-white font-bold text-lg">
+                            DQ
+                        </div>
+                        <span class="text-xs text-gray-500 bg-blue-100 px-2 py-1 rounded-full">In Progress</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Data Quality Framework</h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Created comprehensive data quality monitoring system with automated testing, validation rules, and alerting for enterprise data pipelines.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded-full">Open Metadata</span>
+                        <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">Data Quality</span>
+                        <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">dbt</span>
+                    </div>
+                    <a href="portfolio-detail.html?project=data-quality" 
+                       class="inline-block bg-gradient-to-r from-orange-500 to-red-600 text-white px-4 py-2 rounded-lg hover:from-orange-600 hover:to-red-700 transition-all text-sm">
+                        View Details →
+                    </a>
+                </div>
+
+                <!-- Project 4: Real Time Transformation -->
+                <div class="bg-white rounded-xl p-6 shadow-sm card-hover">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-lg">
+                            RT
+                        </div>
+                        <span class="text-xs text-gray-500 bg-green-100 px-2 py-1 rounded-full">Completed</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Real Time Transformation Pipeline</h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Built streaming data transformation pipelines using Apache Flink and Kafka to process and transform data in real-time for continuous analytics
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">Flink</span>
+                        <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">Kubernetes</span>
+                        <span class="text-xs bg-gray-100 text-gray-800 px-2 py-1 rounded-full">Kafka</span>
+                    </div>
+                    <a href="portfolio-detail.html?project=realtime-pipeline" 
+                       class="inline-block bg-gradient-to-r from-indigo-500 to-blue-600 text-white px-4 py-2 rounded-lg hover:from-indigo-600 hover:to-blue-700 transition-all text-sm">
+                        View Details →
+                    </a>
+                </div>
+            </div>
+            
+            <!-- GitHub Link -->
+            <div class="mt-8 text-center">
+                <p class="text-gray-600 mb-4">Want to see more of my work?</p>
+                <a href="https://github.com/fakhriakmalh" target="_blank" 
+                   class="inline-block bg-gray-800 text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition-all">
+                    <span class="mr-2">📂</span> View All Projects on GitHub
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="bg-white border-t mt-12">
+        <div class="max-w-6xl mx-auto px-4 py-8">
+            <div class="text-center">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Let's Connect</h3>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="mailto:fakhriakmalhidayat@gmail.com" 
+                       class="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors">
+                        <span>📫</span> fakhriakmalhidayat@gmail.com
+                    </a>
+                    <a href="https://www.linkedin.com/in/fakhri-akmal-hidayat-0b12a6150/" target="_blank"
+                       class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                        LinkedIn Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Remove active class from all tab buttons
+            const tabButtons = document.querySelectorAll('.tab-button');
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+                button.classList.add('bg-gray-100', 'hover:bg-gray-200');
+                button.classList.remove('bg-gradient-to-r', 'from-blue-500', 'to-purple-600', 'text-white');
+            });
+
+            // Show selected tab content
+            document.getElementById(tabName).classList.add('active');
+
+            // Add active class to clicked button
+            event.target.classList.add('active');
+            event.target.classList.remove('bg-gray-100', 'hover:bg-gray-200');
+        }
+
+        // Initialize first tab as active
+        document.addEventListener('DOMContentLoaded', function() {
+            showTab('tech');
+        });
+    </script>
+</body>
+</html>
